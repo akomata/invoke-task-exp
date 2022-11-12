@@ -3,7 +3,7 @@
 # How to setup
 
 1. Install Pipenv `pip install pipenv` 
-2. Install required modules `pipenv install`, this will create a virtual env in the current directory.
+2. Install required modules `PIPENV_VENV_IN_PROJECT=1 pipenv install`, this will create a virtual env in the current directory.
 3. Execute a working shell in the virtual env `pipenv shell`
 4. Check if invoke runs `inv -l`
 5. Run an arbitrary invoke task `inv doctor`
