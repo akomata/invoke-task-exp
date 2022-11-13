@@ -90,12 +90,12 @@ def taskF(c):
 This works.
 But here comes the next(and the final) problems.
 
-Problem 1. I do not want to write 2 decorator for every single task.
-Problem 2. If a task takes argument(s), the following code does not work.
+- Problem 1. I do not want to write 2 decorator for every single task.
+- Problem 2. If a task takes argument(s), the following code does not work.
 
 
 ```python
-@task()
+@task
 @pre_task
 def taskG(c, arg1):
     mp("Print the 1st message with no indent", indent=indent)
