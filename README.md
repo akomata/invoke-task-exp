@@ -78,6 +78,32 @@ def taskE(c):
 This should work, but the problem is, I need to put the 1st 2lines in every single task, so I decided to define
 a decorator to do that job, @pre_task.
 
+```python
+@task
+@pre_task
+def taskF(c):
+    mp("Print the 1st message with no indent", indent=indent)
+    mp("Print the 2nd message with 1 indent(2 white space)", indent=indent+1)
+    mp("Print the 3rd message with 2 indent(4 white space)", indent=indent+2)
+```
+
+This works.
+But here comes the next(and the final) problems.
+
+Problem 1. I do not want to write 2 decorator for every single task.
+Problem 2. If a task takes argument(s), the following code does not work.
+
+
+```python
+@task()
+@pre_task
+def taskG(c, arg1):
+    mp("Print the 1st message with no indent", indent=indent)
+    mp("Print the 2nd message with 1 indent(2 white space)", indent=indent+1)
+    mp("Print the 3rd message with 2 indent(4 white space)", indent=indent+2)
+    # use arg1
+```
+
 
 ```shell
 $ inv doctor.all
