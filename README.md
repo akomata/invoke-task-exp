@@ -71,8 +71,8 @@ def taskE(c):
       c.indent = 0
     
     mp("Print the 1st message with no indent", indent=indent)
-    mp("Print the 2nd message with 1 indent(2 white space)", indent=indent+1)
-    mp("Print the 3rd message with 2 indent(4 white space)", indent=indent+2)
+    mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
+    mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
 ```
 
 This should work, but the problem is, I need to put the 1st 2lines in every single task, so I decided to define
@@ -83,8 +83,8 @@ a decorator to do that job, @pre_task.
 @pre_task
 def taskF(c):
     mp("Print the 1st message with no indent", indent=indent)
-    mp("Print the 2nd message with 1 indent(2 white space)", indent=indent+1)
-    mp("Print the 3rd message with 2 indent(4 white space)", indent=indent+2)
+    mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
+    mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
 ```
 
 This works.
@@ -99,8 +99,8 @@ But here comes the next(and the final) problems.
 @pre_task
 def taskG(c, arg1):
     mp("Print the 1st message with no indent", indent=indent)
-    mp("Print the 2nd message with 1 indent(2 white space)", indent=indent+1)
-    mp("Print the 3rd message with 2 indent(4 white space)", indent=indent+2)
+    mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
+    mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
     # use arg1
 ```
 
