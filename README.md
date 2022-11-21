@@ -70,7 +70,7 @@ def taskE(c):
     if not hasattr(c, 'indent'):
       c.indent = 0
     
-    mp("Print the 1st message with no indent", indent=indent)
+    mp("Print the 1st message with no indent", indent=c.indent)
     mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
     mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
 ```
@@ -82,7 +82,7 @@ a decorator to do that job, @pre_task.
 @task
 @pre_task
 def taskF(c):
-    mp("Print the 1st message with no indent", indent=indent)
+    mp("Print the 1st message with no indent", indent=c.indent)
     mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
     mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
 ```
@@ -98,7 +98,7 @@ But here comes the next(and the final) problems.
 @task
 @pre_task
 def taskG(c, arg1):
-    mp("Print the 1st message with no indent", indent=indent)
+    mp("Print the 1st message with no indent", indent=c.indent)
     mp("Print the 2nd message with 1 indent(2 white space)", indent=c.indent+1)
     mp("Print the 3rd message with 2 indent(4 white space)", indent=c.indent+2)
     # use arg1
